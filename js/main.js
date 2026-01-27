@@ -116,3 +116,34 @@
 
 })(jQuery);
 
+$('a[href^="#"]').on('click', function(e) {
+  e.preventDefault();
+  const target = this.hash;
+  const $target = $(target);
+
+  $('html, body').animate({
+    scrollTop: $target.offset().top
+  }, 1000); // 600ms durasi animasi
+});
+
+// Saat link diklik
+$('.navbar-nav .nav-link').on('click', function() {
+  $('.navbar-nav .nav-link').removeClass('active');
+  $(this).addClass('active');
+});
+
+// Saat scroll, cek posisi section
+$(window).on('scroll', function() {
+  const scrollPos = $(document).scrollTop();
+  $('.navbar-nav .nav-link').each(function() {
+    const currLink = $(this);
+    const refElement = $(currLink.attr("href"));
+    if (refElement.length) {
+      if (refElement.position().top <= scrollPos + 100 &&
+          refElement.position().top + refElement.height() > scrollPos + 100) {
+        $('.navbar-nav .nav-link').removeClass("active");
+        currLink.addClass("active");
+      }
+    }
+  });
+});
