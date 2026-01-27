@@ -954,5 +954,21 @@ html {
     background: var(--bs-dark);
 }
 /*** copyright end ***/
+.carousel-item {
+  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+}
 
+.hero-slide {
+  height: 100vh; /* full screen */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
 
+.hero-slide .overlay {
+  background: rgba(0,0,0,0.4); /* semi transparan */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
