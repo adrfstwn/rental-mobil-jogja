@@ -109,154 +109,201 @@ html {
     100% {border-radius: 67% 33% 29% 71% / 39% 46% 54% 61%;}
 }
 /*** Icon Animation End ***/
-
-
-/*** Navbar Start ***/
+/* ===== Navbar ===== */
 .nav-bar {
-    background: var(--bs-white);
+  position: absolute;       /* menempel di atas carousel */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;  /* transparan default */
+  z-index: 10;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
-.sticky-top {
-    transition: 1s;
+/* Saat scroll */
+.nav-bar.navbar-scrolled {
+  position: fixed;          /* menempel di viewport */
+  background: rgba(255, 255, 255, 0.95); /* solid putih */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* efek bayangan */
 }
 
-.navbar-light .navbar-nav .nav-link {
-    position: relative;
-    margin-right: 25px;
-    padding: 35px 0;
-    letter-spacing: 1px;
-    color: var(--bs-dark);
-    font-size: 17px;
-    font-weight: 500;
-    outline: none;
-    transition: .5s;
-}
-
-.sticky-top .navbar-light .navbar-nav .nav-link {
-    padding: 20px 0;
-    color: var(--bs-dark);
-}
-
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link.active {
-    color: var(--bs-primary);
-}
-
-.navbar-light .navbar-brand img {
-    max-height: 60px;
-    transition: .5s;
-}
-
-.sticky-top .navbar-light .navbar-brand img {
-    max-height: 50px;
-}
-
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 600;
-    vertical-align: middle;
-    margin-left: 8px;
-}
-
-.dropdown .dropdown-menu a:hover {
-    background: var(--bs-primary);
-    color: var(--bs-white);
-}
-
-.navbar .nav-item:hover .dropdown-menu {
-    transform: rotateX(0deg);
-    visibility: visible;
-    margin-top: 8px !important;
-    background: var(--bs-light);
-    transition: .5s;
-    opacity: 1;
-}
-
-
-
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-    display: block;
-    visibility: hidden;
-    top: 100%;
-    transform: rotateX(-75deg);
-    transform-origin: 0% 0%;
-    border: 0;
-    border-radius: 10px;
-    margin-top: 8px !important;
-    transition: .5s;
-    opacity: 0;
+    /* ===== Carousel ===== */
+    .header-carousel,
+    .header-carousel .carousel-item {
+    height: 100vh; /* penuh satu layar */
     }
-}
 
-@media (max-width: 991px) {
-    .navbar.navbar-expand-lg .navbar-toggler {
-        padding: 8px 15px;
-        border: 1px solid var(--bs-primary);
-        color: var(--bs-primary);
+    .header-carousel .carousel-item img {
+    object-fit: cover; /* gambar cover penuh */
+    height: 100%;
+    width: 100%;
+    }
+
+    /* Caption agar tidak ketutup navbar */
+    .header-carousel .carousel-caption {
+    padding-top: 100px; /* sesuaikan tinggi navbar */
+    }
+
+
+
+    .sticky-top {
+        transition: 1s;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        position: relative;
+        margin-right: 25px;
+        padding: 35px 0;
+        letter-spacing: 1px;
+        color: rgb(255, 255, 255);
+        font-size: 17px;
+        font-weight: 500;
+        outline: none;
+        transition: .5s;
+    }
+    .navbar-scrolled .navbar-nav .nav-link {
+        color: #000000 !important; /* HITAM saat scroll */
+        padding: 20px 0 !important;
+    }
+
+    /* WARNA TEKS ACTIVE SETELAH SCROLL - tetap primary */
+    .navbar-scrolled .navbar-nav .nav-link.active {
+        color: var(--bs-primary) !important; /* Tetap warna primary saat scroll */
+        padding: 20px 0 !important;
+    }
+
+    /* Hover state */
+    .navbar-light .navbar-nav .nav-link:hover {
+        color: var(--bs-primary) !important;
     }
 
     .sticky-top .navbar-light .navbar-nav .nav-link {
-        padding: 12px 0;
+        padding: 20px 0;
+        color: var(--bs-dark);
     }
-}
-/*** Navbar End ***/
 
-/*** Carousel Header Start ***/
-.carousel .carousel-item img {
-    object-fit: cover;
-}
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-nav .nav-link.active {
+        color: var(--bs-primary);
+        font-weight: 500;
+        font-size: 17px;
+    }
 
-.carousel .carousel-item,
-.carousel .carousel-item img {
-    height: 700px;
-}
+    .navbar-light .navbar-brand img {
+        max-height: 60px;
+        transition: .5s;
+    }
 
-.carousel-item .carousel-caption {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, .6);
-    display: flex;
-    align-items: center;
-}
+    .sticky-top .navbar-light .navbar-brand img {
+        max-height: 50px;
+    }
 
-.carousel .carousel-indicators {
-    left: 75%;
-    top: 50%;
-    margin-right: 25%;
-    transform: translateY(-50%);
-    flex-direction: column;
-}
+    .navbar .dropdown-toggle::after {
+        border: none;
+        content: "\f107";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 600;
+        vertical-align: middle;
+        margin-left: 8px;
+    }
 
-.carousel-indicators [data-bs-target] {
-    display: flex;
-    width: 15px;
-    height: 15px;
-    border: 6px solid var(--bs-white);
-    border-radius: 15px;
-    padding: 0;
-    margin-top:10px;
-    margin-bottom:10px;
-    background-color: var(--bs-secondary);
-    opacity: 1;
-    transition: 0.5s;
-}
+    .dropdown .dropdown-menu a:hover {
+        background: var(--bs-primary);
+        color: var(--bs-white);
+    }
 
-.carousel-indicators [data-bs-target].active {
-    background-color: var(--bs-primary);
-}
+    .navbar .nav-item:hover .dropdown-menu {
+        transform: rotateX(0deg);
+        visibility: visible;
+        margin-top: 8px !important;
+        background: var(--bs-light);
+        transition: .5s;
+        opacity: 1;
+    }
 
-@media (max-width: 992px) {
+
+
+    @media (min-width: 992px) {
+        .navbar .nav-item .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        border: 0;
+        border-radius: 10px;
+        margin-top: 8px !important;
+        transition: .5s;
+        opacity: 0;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .navbar.navbar-expand-lg .navbar-toggler {
+            padding: 8px 15px;
+            border: 1px solid var(--bs-primary);
+            color: var(--bs-primary);
+        }
+
+        .sticky-top .navbar-light .navbar-nav .nav-link {
+            padding: 12px 0;
+        }
+    }
+    /*** Navbar End ***/
+
+    /*** Carousel Header Start ***/
+    .carousel .carousel-item img {
+        object-fit: cover;
+    }
+
+    .carousel .carousel-item,
+    .carousel .carousel-item img {
+        height: 700px;
+    }
+
+    .carousel-item .carousel-caption {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .6);
+        display: flex;
+        align-items: center;
+    }
+
+    .carousel .carousel-indicators {
+        left: 75%;
+        top: 50%;
+        margin-right: 25%;
+        transform: translateY(-50%);
+        flex-direction: column;
+    }
+
     .carousel-indicators [data-bs-target] {
-        display: none;
+        display: flex;
+        width: 15px;
+        height: 15px;
+        border: 6px solid var(--bs-white);
+        border-radius: 15px;
+        padding: 0;
+        margin-top:10px;
+        margin-bottom:10px;
+        background-color: var(--bs-secondary);
+        opacity: 1;
+        transition: 0.5s;
     }
-}
-/*** Carousel Header End ***/
+
+    .carousel-indicators [data-bs-target].active {
+        background-color: var(--bs-primary);
+    }
+
+    @media (max-width: 992px) {
+        .carousel-indicators [data-bs-target] {
+            display: none;
+        }
+    }
+    /*** Carousel Header End ***/
 
 /*** Single Page Hero Header Start ***/
 .bg-breadcrumb {
@@ -971,4 +1018,174 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+/* ===== CAROUSEL BARU DENGAN FORM TETAP ===== */
+/* Hanya tambahan untuk format baru, tidak mengubah navbar */
+
+.header-carousel {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Carousel untuk gambar background */
+.header-carousel .carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Override untuk carousel item */
+.header-carousel .carousel-inner {
+    height: 100%;
+}
+
+.header-carousel .carousel-item {
+    height: 100vh !important; /* override yang lama */
+}
+
+.header-carousel .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    filter: brightness(0.5);
+}
+
+/* Overlay form - posisi absolute di atas carousel */
+.carousel-form-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* di bawah navbar (z-index: 10) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px; /* ruang untuk navbar */
+}
+
+/* Container form dengan animasi */
+.form-container {
+    animation: fadeInUp 1s ease-out;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 15px;
+}
+
+/* Text content di samping form */
+.text-content {
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    max-width: 500px;
+    margin-left: auto;
+}
+
+/* Animasi untuk form */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInUp.animated {
+    animation: fadeInUp 1s ease-out;
+}
+
+.fadeInRight.animated {
+    animation: fadeInRight 1s ease-out 0.5s both;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Form styling khusus */
+.bg-secondary.rounded {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Indicators styling untuk carousel baru */
+.header-carousel .carousel-indicators {
+    z-index: 3;
+    bottom: 20px;
+    margin-bottom: 0;
+    left: auto;
+    right: 20px;
+    top: auto;
+    transform: none;
+    flex-direction: row;
+    width: auto;
+}
+
+.header-carousel .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: transparent;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+}
+
+.header-carousel .carousel-indicators [data-bs-target].active {
+    background-color: var(--bs-primary);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Responsive untuk carousel baru */
+@media (max-width: 992px) {
+    .text-content {
+        display: none;
+    }
+    
+    .form-container {
+        max-width: 100%;
+    }
+    
+    .carousel-form-overlay {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-form-overlay {
+        padding-top: 120px;
+    }
+    
+    .bg-secondary.rounded {
+        padding: 20px !important;
+    }
+}
+
+/* Untuk layar kecil */
+@media (max-height: 700px) {
+    .carousel-form-overlay {
+        padding: 60px 0;
+    }
+}
+.text-content-container {
+    max-width: 90%; /* Tidak full width */
+    margin: 0 auto;
 }
