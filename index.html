@@ -4,6 +4,7 @@
     <head>
         <meta charset="utf-8">
         <title>Embun Pagi Transport - Spesialis Rental Mobil Area Jogja</title>
+        <link rel="icon" type="image/png" href="assets/logo.png">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -79,15 +80,15 @@
                 <div class="carousel-inner" role="listbox">
                     <!-- Slide 1 -->
                     <div class="carousel-item active">
-                        <img src="img/carousel-2.jpg" class="img-fluid w-100" alt="Car Rental 1"/>
+                        <img src="images/index1.png" class="img-fluid w-100" alt="Car Rental 1"/>
                     </div>
                     <!-- Slide 2 -->
                     <div class="carousel-item">
-                        <img src="img/carousel-1.jpg" class="img-fluid w-100" alt="Car Rental 2"/>
+                        <img src="images/index2.png" class="img-fluid w-100" alt="Car Rental 2"/>
                     </div>
                     <!-- Slide 3 -->
                     <div class="carousel-item">
-                        <img src="img/bg-1.jpg" class="img-fluid w-100" alt="Car Rental 3"/>
+                        <img src="images/index3.png" class="img-fluid w-100" alt="Car Rental 3"/>
                     </div>
                 </div>
             </div>
@@ -106,10 +107,16 @@
                                         <div class="col-12">
                                             <select class="form-select form-select-sm" aria-label="Pilih tipe mobil" id="carTypeSelect"> 
                                                 <option selected>Pilih Tipe Mobil</option>
-                                                <option value="1">VW Golf VII - Ekonomis & Nyaman</option>
-                                                <option value="2">Audi A1 S-Line - Sporty & Modern</option>
-                                                <option value="3">Toyota Camry - Mewah & Spesial</option>
-                                                <option value="4">BMW 320 ModernLine - Premium</option>
+                                                <option value="1">Toyota Avanza - Ekonomis & Nyaman</option>
+                                                <option value="2">Daihatsu Xenia - Praktis & Bersahabat</option>
+                                                <option value="3">Suzuki Ertiga - Keluarga & Efisien</option>
+                                                <option value="4">Mitsubishi Xpander - Stylish & Lega</option>
+                                                <option value="5">Honda Mobilio - Modern & Irit</option>
+                                                <option value="6">Toyota Innova - Luas & Premium</option>
+                                                <option value="7">Toyota Fortuner - Tangguh & Berkelas</option>
+                                                <option value="8">Mitsubishi Pajero Sport - Gagah & Mewah</option>
+                                                <option value="9">Honda Brio - Ringkas & Lincah</option>
+                                                <option value="10">Toyota Hiace - Rombongan & Nyaman</option>
                                             </select>
                                         </div>
                                         <div class="col-12">
@@ -118,7 +125,7 @@
                                                     <span class="fas fa-map-marker-alt" style="font-size: 0.9rem;"></span> 
                                                     <span class="ms-1 small">Lokasi Jemput</span>
                                                 </div>
-                                                <input class="form-control form-control-sm" type="text" placeholder="Masukkan kota/bandara"> <!-- form-control-sm -->
+                                                <input class="form-control form-control-sm" type="text" placeholder="Masukkan Nama Tempat"> <!-- form-control-sm -->
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -128,7 +135,7 @@
                                                     <span class="fas fa-map-marker-alt" style="font-size: 0.9rem;"></span>
                                                     <span class="ms-1 small">Lokasi Kembali</span>
                                                 </div>
-                                                <input class="form-control form-control-sm" type="text" placeholder="Masukkan kota/bandara"> <!-- form-control-sm -->
+                                                <input class="form-control form-control-sm" type="text" placeholder="Masukkan  Nama Tempat"> <!-- form-control-sm -->
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -140,6 +147,8 @@
                                                 <input class="form-control form-control-sm" type="date">
                                                 <select class="form-select form-select-sm ms-2" style="flex: 0 0 120px;"> 
                                                     <option selected>Pilih Waktu</option>
+                                                    <option value="6">06:00 Pagi</option>
+                                                    <option value="7">07:00 Pagi</option>
                                                     <option value="8">08:00 Pagi</option>
                                                     <option value="9">09:00 Pagi</option>
                                                     <option value="10">10:00 Pagi</option>
@@ -147,6 +156,16 @@
                                                     <option value="12">12:00 Siang</option>
                                                     <option value="13">13:00 Siang</option>
                                                     <option value="14">14:00 Siang</option>
+                                                    <option value="15">15:00 Sore</option>
+                                                    <option value="16">16:00 Sore</option>
+                                                    <option value="17">17:00 Sore</option>
+                                                    <option value="18">18:00 Sore</option>
+                                                    <option value="19">19:00 Sore</option>
+                                                    <option value="20">20:00 Sore</option>
+                                                    <option value="21">21:00 Sore</option>
+                                                    <option value="22">22:00 Sore</option>
+                                                    <option value="23">23:00 Sore</option>
+                                                    <option value="24">24:00 Sore</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -159,16 +178,31 @@
                                                 <input class="form-control form-control-sm" type="date"> <!-- form-control-sm -->
                                                 <select class="form-select form-select-sm ms-2" style="flex: 0 0 120px;"> <!-- form-select-sm, ms-3 menjadi ms-2, width tetap -->
                                                     <option selected>Pilih Waktu</option>
+                                                    <option value="6">06:00 Pagi</option>
+                                                    <option value="7">07:00 Pagi</option>
+                                                    <option value="8">08:00 Pagi</option>
+                                                    <option value="9">09:00 Pagi</option>
+                                                    <option value="10">10:00 Pagi</option>
+                                                    <option value="11">11:00 Pagi</option>
+                                                    <option value="12">12:00 Siang</option>
+                                                    <option value="13">13:00 Siang</option>
                                                     <option value="14">14:00 Siang</option>
                                                     <option value="15">15:00 Sore</option>
                                                     <option value="16">16:00 Sore</option>
                                                     <option value="17">17:00 Sore</option>
                                                     <option value="18">18:00 Sore</option>
+                                                    <option value="19">19:00 Sore</option>
+                                                    <option value="20">20:00 Sore</option>
+                                                    <option value="21">21:00 Sore</option>
+                                                    <option value="22">22:00 Sore</option>
+                                                    <option value="23">23:00 Sore</option>
+                                                    <option value="24">24:00 Sore</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <button type="button" 
+                                                    target="_blank"
                                                     class="btn btn-light w-100 py-1 fw-bold" 
                                                     style="font-size: 0.9rem;"
                                                     id="whatsappButton">
@@ -190,7 +224,7 @@
                         <div class="col-lg-7 d-none d-lg-block fadeInRight animated" data-animation="fadeInRight" data-delay="1s" style="animation-delay: 1s;">
                             <div class="text-content-container ms-lg-2">
                                 <h2 class="h5 fw-bold mb-2 text-white">DISKON 15%<br><span class="text-primary" style="font-size: 1.1rem;">Sewa Mobil Anda</span></h2>
-                                <p class="mb-3 small text-white" style="font-size: 0.9rem;">Nikmati pengalaman berkendara terbaik dengan layanan sewa mobil premium kami.</p>
+                                <p class="mb-3 small text-white" style="font-size: 0.9rem;">Nikmati pengalaman berkendara terbaik dengan layanan<br>sewa mobil premium kami.</p>
                                 
                                 <div class="features-list">
                                     <div class="feature-item d-flex align-items-center mt-2 mb-2">
