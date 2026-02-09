@@ -237,7 +237,7 @@ Terima kasih!`;
             
             // 6. Encode dan kirim ke WhatsApp
             const encodedMessage = encodeURIComponent(message);
-            const phoneNumber = '628130909009009'; // GANTI DENGAN NOMOR ANDA
+            const phoneNumber = '628815700968'; // GANTI DENGAN NOMOR ANDA
             
             window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
         });
